@@ -1,5 +1,5 @@
 {
     "require": {
-        "akamai-open/edgegrid-client": "^1.0"
+        "akamai-open/edgegrid-client": "2.1.0"
     }
 }

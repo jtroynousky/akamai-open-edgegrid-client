@@ -8,26 +8,20 @@ class ComposerStaticInit1f4262771957f0539570245298fd574f
 {
     public static $files = array (
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
-        '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
-        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
-        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
-        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
-        'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
+        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
     );
 
     public static $prefixLengthsPsr4 = array (
         'S' => 
         array (
-            'Symfony\\Polyfill\\Php72\\' => 23,
-            'Symfony\\Polyfill\\Mbstring\\' => 26,
-            'Symfony\\Polyfill\\Intl\\Idn\\' => 26,
             'Seld\\CliPrompt\\' => 15,
         ),
         'P' => 
         array (
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
+            'Psr\\Http\\Client\\' => 16,
         ),
         'M' => 
         array (
@@ -50,29 +44,22 @@ class ComposerStaticInit1f4262771957f0539570245298fd574f
     );
 
     public static $prefixDirsPsr4 = array (
-        'Symfony\\Polyfill\\Php72\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-php72',
-        ),
-        'Symfony\\Polyfill\\Mbstring\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
-        ),
-        'Symfony\\Polyfill\\Intl\\Idn\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-intl-idn',
-        ),
         'Seld\\CliPrompt\\' => 
         array (
             0 => __DIR__ . '/..' . '/seld/cli-prompt/src',
         ),
         'Psr\\Log\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+            0 => __DIR__ . '/..' . '/psr/log/src',
         ),
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+        ),
+        'Psr\\Http\\Client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-client/src',
         ),
         'Monolog\\' => 
         array (
@@ -101,11 +88,16 @@ class ComposerStaticInit1f4262771957f0539570245298fd574f
         ),
     );
 
+    public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit1f4262771957f0539570245298fd574f::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit1f4262771957f0539570245298fd574f::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit1f4262771957f0539570245298fd574f::$classMap;
 
         }, null, ClassLoader::class);
     }
